@@ -39,46 +39,46 @@ _XFUNCPROTOBEGIN
  * Function prototypes for internal ICElib functions
  */
 
-extern Status _IceRead (
+__attribute__ ((visibility("default"))) extern Status _IceRead (
     IceConn		/* iceConn */,
     unsigned long	/* nbytes */,
     char *		/* ptr */
 );
 
-extern void _IceReadSkip (
+__attribute__ ((visibility("default"))) extern void _IceReadSkip (
     IceConn		/* iceConn */,
     unsigned long	/* nbytes */
 );
 
-extern void _IceWrite (
+__attribute__ ((visibility("default"))) extern void _IceWrite (
     IceConn		/* iceConn */,
     unsigned long	/* nbytes */,
     char *		/* ptr */
 );
 
 
-extern void _IceErrorBadMinor (
+__attribute__ ((visibility("default"))) extern void _IceErrorBadMinor (
     IceConn		/* iceConn */,
     int			/* majorOpcode */,
     int			/* offendingMinor */,
     int			/* severity */
 );
 
-extern void _IceErrorBadState (
+__attribute__ ((visibility("default"))) extern void _IceErrorBadState (
     IceConn		/* iceConn */,
     int			/* majorOpcode */,
     int			/* offendingMinor */,
     int			/* severity */
 );
 
-extern void _IceErrorBadLength (
+__attribute__ ((visibility("default"))) extern void _IceErrorBadLength (
     IceConn		/* iceConn */,
     int			/* majorOpcode */,
     int			/* offendingMinor */,
     int			/* severity */
 );
 
-extern void _IceErrorBadValue (
+__attribute__ ((visibility("default"))) extern void _IceErrorBadValue (
     IceConn		/* iceConn */,
     int			/* majorOpcode */,
     int			/* offendingMinor */,
@@ -87,7 +87,7 @@ extern void _IceErrorBadValue (
     IcePointer		/* value */
 );
 
-extern IcePoAuthStatus _IcePoMagicCookie1Proc (
+__attribute__ ((visibility("default"))) extern IcePoAuthStatus _IcePoMagicCookie1Proc (
     IceConn		/* iceConn */,
     IcePointer *	/* authStatePtr */,
     Bool 		/* cleanUp */,
@@ -99,7 +99,7 @@ extern IcePoAuthStatus _IcePoMagicCookie1Proc (
     char **		/* errorStringRet */
 );
 
-extern IcePaAuthStatus _IcePaMagicCookie1Proc (
+__attribute__ ((visibility("default"))) extern IcePaAuthStatus _IcePaMagicCookie1Proc (
     IceConn		/* iceConn */,
     IcePointer *	/* authStatePtr */,
     Bool		/* swap */,

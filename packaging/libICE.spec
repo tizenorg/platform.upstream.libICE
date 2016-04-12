@@ -41,6 +41,7 @@ in %{name}.
 cp %{SOURCE1001} .
 
 %build
+export CFLAGS="$CFLAGS -fvisibility=hidden"
 %configure --docdir=%_docdir/%{name} --disable-static
 make %{?_smp_mflags}
 

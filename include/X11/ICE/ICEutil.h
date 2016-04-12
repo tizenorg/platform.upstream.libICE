@@ -76,45 +76,45 @@ typedef struct {
  * Function Prototypes
  */
 
-extern char *IceAuthFileName (
+__attribute__ ((visibility("default"))) extern char *IceAuthFileName (
     void
 );
 
-extern int IceLockAuthFile (
+__attribute__ ((visibility("default"))) extern int IceLockAuthFile (
     char *		/* file_name */,
     int			/* retries */,
     int			/* timeout */,
     long		/* dead */
 );
 
-extern void IceUnlockAuthFile (
+__attribute__ ((visibility("default"))) extern void IceUnlockAuthFile (
     char *		/* file_name */
 );
 
-extern IceAuthFileEntry *IceReadAuthFileEntry (
+__attribute__ ((visibility("default"))) extern IceAuthFileEntry *IceReadAuthFileEntry (
     FILE *		/* auth_file */
 );
 
-extern void IceFreeAuthFileEntry (
+__attribute__ ((visibility("default"))) extern void IceFreeAuthFileEntry (
     IceAuthFileEntry *	/* auth */
 );
 
-extern Status IceWriteAuthFileEntry (
+__attribute__ ((visibility("default"))) extern Status IceWriteAuthFileEntry (
     FILE *		/* auth_file */,
     IceAuthFileEntry *	/* auth */
 );
 
-extern IceAuthFileEntry *IceGetAuthFileEntry (
+__attribute__ ((visibility("default"))) extern IceAuthFileEntry *IceGetAuthFileEntry (
     const char *	/* protocol_name */,
     const char *	/* network_id */,
     const char *	/* auth_name */
 );
 
-extern char *IceGenerateMagicCookie (
+__attribute__ ((visibility("default"))) extern char *IceGenerateMagicCookie (
     int			/* len */
 );
 
-extern void IceSetPaAuthData (
+__attribute__ ((visibility("default"))) extern void IceSetPaAuthData (
     int			/* numEntries */,
     IceAuthDataEntry *	/* entries */
 );

@@ -205,7 +205,7 @@ typedef void (*IceIOErrorHandler) (
 
 _XFUNCPROTOBEGIN
 
-extern int IceRegisterForProtocolSetup (
+__attribute__ ((visibility("default"))) extern int IceRegisterForProtocolSetup (
     const char *		/* protocolName */,
     const char *		/* vendor */,
     const char *		/* release */,
@@ -217,7 +217,7 @@ extern int IceRegisterForProtocolSetup (
     IceIOErrorProc		/* IOErrorProc */
 );
 
-extern int IceRegisterForProtocolReply (
+__attribute__ ((visibility("default"))) extern int IceRegisterForProtocolReply (
     const char *		/* protocolName */,
     const char *		/* vendor */,
     const char *		/* release */,
@@ -232,7 +232,7 @@ extern int IceRegisterForProtocolReply (
     IceIOErrorProc		/* IOErrorProc */
 );
 
-extern IceConn IceOpenConnection (
+__attribute__ ((visibility("default"))) extern IceConn IceOpenConnection (
     char *		/* networkIdsList */,
     IcePointer		/* context */,
     Bool		/* mustAuthenticate */,
@@ -241,18 +241,18 @@ extern IceConn IceOpenConnection (
     char *		/* errorStringRet */
 );
 
-extern IcePointer IceGetConnectionContext (
+__attribute__ ((visibility("default"))) extern IcePointer IceGetConnectionContext (
     IceConn		/* iceConn */
 );
 
-extern Status IceListenForConnections (
+__attribute__ ((visibility("default"))) extern Status IceListenForConnections (
     int *		/* countRet */,
     IceListenObj **	/* listenObjsRet */,
     int			/* errorLength */,
     char *		/* errorStringRet */
 );
 
-extern Status IceListenForWellKnownConnections (
+__attribute__ ((visibility("default"))) extern Status IceListenForWellKnownConnections (
     char *		/* port */,
     int *		/* countRet */,
     IceListenObj **	/* listenObjsRet */,
@@ -260,58 +260,58 @@ extern Status IceListenForWellKnownConnections (
     char *		/* errorStringRet */
 );
 
-extern int IceGetListenConnectionNumber (
+__attribute__ ((visibility("default"))) extern int IceGetListenConnectionNumber (
     IceListenObj	/* listenObj */
 );
 
-extern char *IceGetListenConnectionString (
+__attribute__ ((visibility("default"))) extern char *IceGetListenConnectionString (
     IceListenObj	/* listenObj */
 );
 
-extern char *IceComposeNetworkIdList (
+__attribute__ ((visibility("default"))) extern char *IceComposeNetworkIdList (
     int			/* count */,
     IceListenObj *	/* listenObjs */
 );
 
-extern void IceFreeListenObjs (
+__attribute__ ((visibility("default"))) extern void IceFreeListenObjs (
     int			/* count */,
     IceListenObj *	/* listenObjs */
 );
 
-extern void IceSetHostBasedAuthProc (
+__attribute__ ((visibility("default"))) extern void IceSetHostBasedAuthProc (
     IceListenObj		/* listenObj */,
     IceHostBasedAuthProc   	/* hostBasedAuthProc */
 );
 
-extern IceConn IceAcceptConnection (
+__attribute__ ((visibility("default"))) extern IceConn IceAcceptConnection (
     IceListenObj	/* listenObj */,
     IceAcceptStatus *	/* statusRet */
 );
 
-extern void IceSetShutdownNegotiation (
+__attribute__ ((visibility("default"))) extern void IceSetShutdownNegotiation (
     IceConn		/* iceConn */,
     Bool		/* negotiate */
 );
 
-extern Bool IceCheckShutdownNegotiation (
+__attribute__ ((visibility("default"))) extern Bool IceCheckShutdownNegotiation (
     IceConn		/* iceConn */
 );
 
-extern IceCloseStatus IceCloseConnection (
+__attribute__ ((visibility("default"))) extern IceCloseStatus IceCloseConnection (
     IceConn		/* iceConn */
 );
 
-extern Status IceAddConnectionWatch (
+__attribute__ ((visibility("default"))) extern Status IceAddConnectionWatch (
     IceWatchProc		/* watchProc */,
     IcePointer			/* clientData */
 );
 
-extern void IceRemoveConnectionWatch (
+__attribute__ ((visibility("default"))) extern void IceRemoveConnectionWatch (
     IceWatchProc		/* watchProc */,
     IcePointer			/* clientData */
 );
 
-extern IceProtocolSetupStatus IceProtocolSetup (
+__attribute__ ((visibility("default"))) extern IceProtocolSetupStatus IceProtocolSetup (
     IceConn		/* iceConn */,
     int 		/* myOpcode */,
     IcePointer		/* clientData */,
@@ -324,89 +324,89 @@ extern IceProtocolSetupStatus IceProtocolSetup (
     char *		/* errorStringRet */
 );
 
-extern Status IceProtocolShutdown (
+__attribute__ ((visibility("default"))) extern Status IceProtocolShutdown (
     IceConn		/* iceConn */,
     int			/* majorOpcode */
 );
 
-extern IceProcessMessagesStatus IceProcessMessages (
+__attribute__ ((visibility("default"))) extern IceProcessMessagesStatus IceProcessMessages (
     IceConn		/* iceConn */,
     IceReplyWaitInfo *	/* replyWait */,
     Bool *		/* replyReadyRet */
 );
 
-extern Status IcePing (
+__attribute__ ((visibility("default"))) extern Status IcePing (
    IceConn		/* iceConn */,
    IcePingReplyProc	/* pingReplyProc */,
    IcePointer		/* clientData */
 );
 
-extern char *IceAllocScratch (
+__attribute__ ((visibility("default"))) extern char *IceAllocScratch (
    IceConn		/* iceConn */,
    unsigned long	/* size */
 );
 
-extern int IceFlush (
+__attribute__ ((visibility("default"))) extern int IceFlush (
    IceConn		/* iceConn */
 );
 
-extern int IceGetOutBufSize (
+__attribute__ ((visibility("default"))) extern int IceGetOutBufSize (
    IceConn		/* iceConn */
 );
 
-extern int IceGetInBufSize (
+__attribute__ ((visibility("default"))) extern int IceGetInBufSize (
    IceConn		/* iceConn */
 );
 
-extern IceConnectStatus IceConnectionStatus (
+__attribute__ ((visibility("default"))) extern IceConnectStatus IceConnectionStatus (
     IceConn		/* iceConn */
 );
 
-extern char *IceVendor (
+__attribute__ ((visibility("default"))) extern char *IceVendor (
     IceConn		/* iceConn */
 );
 
-extern char *IceRelease (
+__attribute__ ((visibility("default"))) extern char *IceRelease (
     IceConn		/* iceConn */
 );
 
-extern int IceProtocolVersion (
+__attribute__ ((visibility("default"))) extern int IceProtocolVersion (
     IceConn		/* iceConn */
 );
 
-extern int IceProtocolRevision (
+__attribute__ ((visibility("default"))) extern int IceProtocolRevision (
     IceConn		/* iceConn */
 );
 
-extern int IceConnectionNumber (
+__attribute__ ((visibility("default"))) extern int IceConnectionNumber (
     IceConn		/* iceConn */
 );
 
-extern char *IceConnectionString (
+__attribute__ ((visibility("default"))) extern char *IceConnectionString (
     IceConn		/* iceConn */
 );
 
-extern unsigned long IceLastSentSequenceNumber (
+__attribute__ ((visibility("default"))) extern unsigned long IceLastSentSequenceNumber (
     IceConn		/* iceConn */
 );
 
-extern unsigned long IceLastReceivedSequenceNumber (
+__attribute__ ((visibility("default"))) extern unsigned long IceLastReceivedSequenceNumber (
     IceConn		/* iceConn */
 );
 
-extern Bool IceSwapping (
+__attribute__ ((visibility("default"))) extern Bool IceSwapping (
     IceConn		/* iceConn */
 );
 
-extern IceErrorHandler IceSetErrorHandler (
+__attribute__ ((visibility("default"))) extern IceErrorHandler IceSetErrorHandler (
     IceErrorHandler 	/* handler */
 );
 
-extern IceIOErrorHandler IceSetIOErrorHandler (
+__attribute__ ((visibility("default"))) extern IceIOErrorHandler IceSetIOErrorHandler (
     IceIOErrorHandler 	/* handler */
 );
 
-extern char *IceGetPeerName (
+__attribute__ ((visibility("default"))) extern char *IceGetPeerName (
     IceConn		/* iceConn */
 );
 
@@ -414,15 +414,15 @@ extern char *IceGetPeerName (
  * Multithread Routines
  */
 
-extern Status IceInitThreads (
+__attribute__ ((visibility("default"))) extern Status IceInitThreads (
     void
 );
 
-extern void IceAppLockConn (
+__attribute__ ((visibility("default"))) extern void IceAppLockConn (
     IceConn		/* iceConn */
 );
 
-extern void IceAppUnlockConn (
+__attribute__ ((visibility("default"))) extern void IceAppUnlockConn (
     IceConn		/* iceConn */
 );
 
